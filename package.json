@@ -1,0 +1,37 @@
+{
+  "name": "models-fetch-for-copilot",
+  "displayName": "Copilot Custom Endpoint Model Fetcher",
+  "description": "Easily fetch and register models for GitHub Copilot Custom Endpoint providers in VS Code",
+  "version": "0.1.0",
+  "publisher": "jules",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "models-fetch-for-copilot.fetchModels",
+        "title": "Copilot Custom Endpoint: Fetch and Configure Models"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "esbuild src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node",
+    "watch": "esbuild src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node --watch",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.90.0",
+    "esbuild": "^0.20.1",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.2",
+    "typescript": "^5.3.3"
+  }
+}
