@@ -1,0 +1,8 @@
+.git/**
+node_modules/**
+tests/**
+src/**
+jest.config.js
+tsconfig.json
+package-lock.json
+models-fetch-for-copilot-0.1.0.vsix
