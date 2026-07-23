@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+
+    <!-- Glowing Blue Gradient -->
+    <linearGradient id="blueGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+
+    <!-- Glowing Cyan/Teal Gradient -->
+    <linearGradient id="cyanGlow" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#22d3ee" />
+    </linearGradient>
+
+    <!-- Metallic Shield/Robot Gradient -->
+    <linearGradient id="metalGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#475569" />
+      <stop offset="100%" stop-color="#334155" />
+    </linearGradient>
+  </defs>
+
+  <!-- Base Rounded Rectangle -->
+  <rect width="128" height="128" rx="28" fill="url(#bgGrad)" />
+
+  <!-- Hexagonal background grid effect (subtle) -->
+  <path d="M 64,15 L 100,36 L 100,78 L 64,99 L 28,78 L 28,36 Z" fill="none" stroke="#334155" stroke-width="1.5" stroke-dasharray="4,4" opacity="0.4" />
+  <path d="M 64,25 L 91,41 L 91,73 L 64,89 L 37,73 L 31,41 Z" fill="none" stroke="#334155" stroke-width="1.5" stroke-dasharray="4,4" opacity="0.3" />
+
+  <!-- Robot Face Outline -->
+  <rect x="36" y="38" width="56" height="48" rx="14" fill="url(#metalGrad)" stroke="#1e293b" stroke-width="3" />
+
+  <!-- Robot Ears/Antennas -->
+  <rect x="28" y="52" width="8" height="20" rx="3" fill="#475569" />
+  <rect x="92" y="52" width="8" height="20" rx="3" fill="#475569" />
+
+  <!-- Robot Antenna Top -->
+  <line x1="64" y1="38" x2="64" y2="28" stroke="#475569" stroke-width="4" stroke-linecap="round" />
+  <circle cx="64" cy="26" r="5" fill="url(#blueGlow)" />
+
+  <!-- Robot Glowing Screen -->
+  <rect x="42" y="44" width="44" height="30" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="1.5" />
+
+  <!-- Glowing Eyes (Copilot / AI style) -->
+  <circle cx="53" cy="56" r="4.5" fill="url(#cyanGlow)" />
+  <circle cx="75" cy="56" r="4.5" fill="url(#cyanGlow)" />
+
+  <!-- Subtle mouth line -->
+  <path d="M 52,66 Q 64,70 76,66" stroke="url(#cyanGlow)" stroke-width="2" stroke-linecap="round" fill="none" />
+
+  <!-- Network Sync / Fetch Circular Arrow overlaying the bottom right -->
+  <circle cx="94" cy="94" r="24" fill="#0f172a" stroke="#1e293b" stroke-width="2" />
+  <circle cx="94" cy="94" r="20" fill="url(#blueGlow)" />
+
+  <!-- Sync Arrows Icon (White) -->
+  <path d="M 94,84 A 10,10 0 0,1 103,91.5 L 100,91.5" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" fill="none" />
+  <path d="M 104,89 L 104,94 L 99,94" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+
+  <path d="M 94,104 A 10,10 0 0,1 85,96.5 L 88,96.5" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" fill="none" />
+  <path d="M 84,99 L 84,94 L 89,94" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+</svg>
