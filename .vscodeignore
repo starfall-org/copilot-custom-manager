@@ -5,4 +5,5 @@ src/**
 jest.config.js
 tsconfig.json
 package-lock.json
-models-fetch-for-copilot-0.1.0.vsix
+icon.svg
+copilot-custom-manager-0.1.0.vsix

@@ -677,10 +677,17 @@ export class CopilotModelsWebview {
                 case 'saveFetchedModels': {
                     const { providerName, baseUrl, apiType, apiKey, selectedModelIds } = message;
 
+                    // Preserve secure reference if it was used previously
+                    let apiKeyToWrite = apiKey;
+                    const existingProvider = configData.find(p => p.name === providerName && p.vendor === 'customendpoint');
+                    if (existingProvider && existingProvider.apiKey?.startsWith('${input:')) {
+                        apiKeyToWrite = existingProvider.apiKey;
+                    }
+
                     const updatedConfig = mergeModelsIntoConfig(
                         configData,
                         providerName,
-                        apiKey, // Will be written to file if provided
+                        apiKeyToWrite,
                         apiType,
                         baseUrl,
                         selectedModelIds
