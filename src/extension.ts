@@ -3,7 +3,6 @@ import * as fs from 'fs';
 import { getChatLanguageModelsPath, readChatLanguageModels, writeChatLanguageModels } from './configLocator';
 import { fetchModels } from './apiClient';
 import { mergeModelsIntoConfig, ProviderConfig } from './configMerger';
-import { CopilotModelsWebview } from './webviewProvider';
 
 export function activate(context: vscode.ExtensionContext) {
     console.log('Extension "copilot-custom-manager" is now active!');
@@ -240,13 +239,7 @@ export function activate(context: vscode.ExtensionContext) {
         }
     });
 
-    // Command 2: Modern Webview Management UI Dashboard
-    const disposableOpenUI = vscode.commands.registerCommand('copilot-custom-manager.openUI', () => {
-        CopilotModelsWebview.createOrShow(context.extensionUri, context.globalStorageUri);
-    });
-
     context.subscriptions.push(disposableFetch);
-    context.subscriptions.push(disposableOpenUI);
 }
 
 export function deactivate() {}
