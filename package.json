@@ -4,6 +4,10 @@
   "description": "Easily fetch and register models for GitHub Copilot Custom Endpoint providers in VS Code",
   "version": "1.1.0",
   "publisher": "jules",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/starfall-org/copilot-custom-manager.git"
+  },
   "engines": {
     "vscode": "^1.90.0"
   },
