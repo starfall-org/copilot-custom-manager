@@ -20,7 +20,7 @@ describe('configLocator tests', () => {
 
     test('getVSCodeUserDir from globalStorageUri', () => {
         // Mock globalStorageUri: .../User/globalStorage/publisher.id
-        const mockStoragePath = path.join(tempTestDir, 'globalStorage', 'jules.models-fetch-for-copilot');
+        const mockStoragePath = path.join(tempTestDir, 'globalStorage', 'jules.copilot-custom-manager');
         fs.mkdirSync(mockStoragePath, { recursive: true });
 
         const mockUri = vscode.Uri.file(mockStoragePath);

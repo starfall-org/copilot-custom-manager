@@ -3,11 +3,13 @@ import * as fs from 'fs';
 import { getChatLanguageModelsPath, readChatLanguageModels, writeChatLanguageModels } from './configLocator';
 import { fetchModels } from './apiClient';
 import { mergeModelsIntoConfig, ProviderConfig } from './configMerger';
+import { CopilotModelsWebview } from './webviewProvider';
 
 export function activate(context: vscode.ExtensionContext) {
-    console.log('Extension "models-fetch-for-copilot" is now active!');
+    console.log('Extension "copilot-custom-manager" is now active!');
 
-    const disposable = vscode.commands.registerCommand('models-fetch-for-copilot.fetchModels', async () => {
+    // Command 1: Fast command-line guided wizard
+    const disposableFetch = vscode.commands.registerCommand('copilot-custom-manager.fetchModels', async () => {
         try {
             // 1. Locate chatLanguageModels.json
             const configPath = getChatLanguageModelsPath(context.globalStorageUri);
@@ -238,7 +240,13 @@ export function activate(context: vscode.ExtensionContext) {
         }
     });
 
-    context.subscriptions.push(disposable);
+    // Command 2: Modern Webview Management UI Dashboard
+    const disposableOpenUI = vscode.commands.registerCommand('copilot-custom-manager.openUI', () => {
+        CopilotModelsWebview.createOrShow(context.extensionUri, context.globalStorageUri);
+    });
+
+    context.subscriptions.push(disposableFetch);
+    context.subscriptions.push(disposableOpenUI);
 }
 
 export function deactivate() {}
